@@ -1,0 +1,22 @@
+{
+  "name": "PercentCalc Agha - Percentage Calculator",
+  "short_name": "PercentCalc Agha",
+  "description": "Free, fast and simple percentage calculator.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f6f7fc",
+  "theme_color": "#6c5ce7",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

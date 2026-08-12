@@ -1,0 +1,1997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Percentage Calculator - Free Online Percent Calculator | PercentCalc Agha</title>
+
+  <meta
+    name="description"
+    content="Free percentage calculator for quick and accurate calculations. Find a percentage of a number, calculate what percent one number is of another, and calculate percentage change."
+  >
+
+  <meta
+    name="keywords"
+    content="percentage calculator, percent calculator, percentage calculator online, calculate percentage, percentage change calculator, free percentage calculator"
+  >
+
+  <meta name="author" content="PercentCalc Agha">
+  <meta name="robots" content="index, follow">
+
+  <!-- Change this to your real website URL after publishing -->
+  <link rel="canonical" href="https://YOUR-DOMAIN.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Percentage Calculator - PercentCalc Agha">
+  <meta
+    property="og:description"
+    content="Calculate percentages quickly and easily with PercentCalc Agha."
+  >
+  <meta property="og:url" content="https://YOUR-DOMAIN.com/">
+  <meta property="og:site_name" content="PercentCalc Agha">
+
+  <meta name="theme-color" content="#6c5ce7">
+
+  <!-- WebSite structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "PercentCalc Agha",
+    "alternateName": "Percentage Calculator Agha",
+    "url": "https://YOUR-DOMAIN.com/"
+  }
+  </script>
+
+  <!-- WebApplication structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "PercentCalc Agha",
+    "url": "https://YOUR-DOMAIN.com/",
+    "description": "Free online percentage calculator.",
+    "applicationCategory": "CalculatorApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #6c5ce7;
+      --primary-dark: #5545d4;
+      --secondary: #00b894;
+      --pink: #fd79a8;
+      --blue: #0984e3;
+      --orange: #ff9f43;
+
+      --bg: #f6f7fc;
+      --card: #ffffff;
+      --text: #172033;
+      --muted: #6d7688;
+      --border: #e5e8f1;
+
+      --shadow: 0 20px 55px rgba(40, 45, 85, 0.10);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+      background:
+        radial-gradient(
+          circle at 5% 5%,
+          rgba(108, 92, 231, 0.12),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 95% 15%,
+          rgba(0, 184, 148, 0.10),
+          transparent 25%
+        ),
+        var(--bg);
+
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1080px, 92%);
+      margin: auto;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      background: rgba(255, 255, 255, 0.90);
+      backdrop-filter: blur(16px);
+
+      border-bottom: 1px solid rgba(225, 228, 239, 0.9);
+    }
+
+    .nav {
+      min-height: 72px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: -0.7px;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--primary),
+          var(--pink),
+          var(--orange)
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 700;
+      color: #596275;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .theme-button {
+      width: 40px;
+      height: 40px;
+
+      border: 1px solid var(--border);
+      border-radius: 12px;
+
+      background: white;
+      font-size: 18px;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      text-align: center;
+      padding: 72px 0 25px;
+    }
+
+    .badge {
+      display: inline-flex;
+
+      padding: 7px 14px;
+      border-radius: 50px;
+
+      background: rgba(108, 92, 231, 0.10);
+      color: var(--primary);
+
+      font-size: 13px;
+      font-weight: 800;
+
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      max-width: 850px;
+      margin: auto;
+
+      font-size: clamp(38px, 7vw, 65px);
+      line-height: 1.04;
+
+      letter-spacing: -2.5px;
+    }
+
+    .gradient {
+      background:
+        linear-gradient(
+          90deg,
+          var(--primary),
+          var(--blue),
+          var(--secondary),
+          var(--pink)
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: 19px auto 0;
+
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .trust {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 9px;
+
+      margin-top: 20px;
+    }
+
+    .trust span {
+      padding: 7px 12px;
+
+      border: 1px solid var(--border);
+      border-radius: 50px;
+
+      background: white;
+
+      color: #596275;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    /* =========================
+       CALCULATOR
+    ========================= */
+
+    .calculator-card {
+      max-width: 850px;
+      margin: 35px auto 0;
+
+      background: var(--card);
+
+      border: 1px solid var(--border);
+      border-radius: 28px;
+
+      padding: 25px;
+
+      box-shadow: var(--shadow);
+    }
+
+    .mode-buttons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+
+      margin-bottom: 25px;
+    }
+
+    .mode-button {
+      border: 1px solid var(--border);
+
+      background: #f8f9fd;
+      color: #596275;
+
+      border-radius: 14px;
+      padding: 13px 10px;
+
+      font-weight: 800;
+      font-size: 13px;
+
+      transition: 0.2s ease;
+    }
+
+    .mode-button:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .mode-button.active {
+      color: white;
+      border-color: transparent;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          #8b7cff
+        );
+
+      box-shadow:
+        0 9px 22px rgba(108, 92, 231, 0.22);
+    }
+
+    .question {
+      text-align: center;
+      margin-bottom: 22px;
+    }
+
+    .question h2 {
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
+
+    .question p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .fields {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .field label {
+      font-size: 13px;
+      font-weight: 800;
+      color: #4d5668;
+    }
+
+    .input-wrap {
+      position: relative;
+    }
+
+    .input-wrap input {
+      width: 100%;
+
+      border: 2px solid var(--border);
+      border-radius: 15px;
+
+      background: #fbfcff;
+
+      padding: 15px 45px 15px 15px;
+
+      outline: none;
+
+      color: var(--text);
+      font-size: 18px;
+      font-weight: 700;
+
+      transition: 0.2s ease;
+    }
+
+    .input-wrap input:focus {
+      border-color: var(--primary);
+
+      box-shadow:
+        0 0 0 4px rgba(108, 92, 231, 0.09);
+    }
+
+    .suffix {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+
+      transform: translateY(-50%);
+
+      color: var(--primary);
+      font-weight: 900;
+    }
+
+    .calculate-button {
+      width: 100%;
+
+      margin-top: 20px;
+
+      border: 0;
+      border-radius: 15px;
+
+      padding: 15px;
+
+      color: white;
+
+      font-size: 16px;
+      font-weight: 900;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          var(--blue)
+        );
+
+      box-shadow:
+        0 12px 28px rgba(108, 92, 231, 0.23);
+
+      transition: 0.2s ease;
+    }
+
+    .calculate-button:hover {
+      transform: translateY(-2px);
+    }
+
+    .calculate-button:active {
+      transform: translateY(0);
+    }
+
+    /* RESULT */
+
+    .result {
+      display: none;
+
+      margin-top: 20px;
+
+      padding: 22px;
+
+      border-radius: 20px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(108, 92, 231, 0.07),
+          rgba(0, 184, 148, 0.07)
+        );
+
+      border: 1px solid rgba(108, 92, 231, 0.14);
+
+      text-align: center;
+    }
+
+    .result.show {
+      display: block;
+      animation: resultIn 0.25s ease;
+    }
+
+    @keyframes resultIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .result-label {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .result-number {
+      margin-top: 5px;
+
+      font-size: clamp(32px, 7vw, 52px);
+      line-height: 1.1;
+
+      font-weight: 950;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--primary),
+          var(--blue),
+          var(--secondary)
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+
+      word-break: break-word;
+    }
+
+    .result-explanation {
+      max-width: 650px;
+      margin: 10px auto 0;
+
+      color: #5d6678;
+      font-size: 14px;
+    }
+
+    .result-actions {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+
+      margin-top: 17px;
+    }
+
+    .small-button {
+      border: 0;
+      border-radius: 12px;
+
+      padding: 10px 16px;
+
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .copy-button {
+      background: var(--primary);
+      color: white;
+    }
+
+    .reset-button {
+      background: #e9ecf4;
+      color: #515b6d;
+    }
+
+    .error {
+      display: none;
+
+      margin-top: 15px;
+
+      padding: 12px;
+
+      border-radius: 12px;
+
+      background: #fff0f2;
+      color: #d6304f;
+
+      text-align: center;
+
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .error.show {
+      display: block;
+    }
+
+    /* =========================
+       HOW IT WORKS
+    ========================= */
+
+    .section {
+      padding: 75px 0;
+    }
+
+    .section-title {
+      max-width: 700px;
+
+      text-align: center;
+
+      margin: 0 auto 35px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(30px, 5vw, 44px);
+      letter-spacing: -1px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .step {
+      background: white;
+
+      border: 1px solid var(--border);
+      border-radius: 22px;
+
+      padding: 25px;
+
+      box-shadow:
+        0 8px 30px rgba(40, 45, 85, 0.05);
+    }
+
+    .step-number {
+      width: 48px;
+      height: 48px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 15px;
+
+      margin-bottom: 15px;
+
+      color: white;
+      font-weight: 900;
+      font-size: 18px;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          var(--pink)
+        );
+    }
+
+    .step h3 {
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* =========================
+       SEO CONTENT
+    ========================= */
+
+    .content-card {
+      max-width: 850px;
+      margin: auto;
+
+      background: white;
+
+      border: 1px solid var(--border);
+      border-radius: 24px;
+
+      padding: 30px;
+
+      box-shadow:
+        0 8px 30px rgba(40, 45, 85, 0.05);
+    }
+
+    .content-card h2 {
+      margin-bottom: 12px;
+      font-size: 28px;
+    }
+
+    .content-card h3 {
+      margin-top: 24px;
+      margin-bottom: 7px;
+      font-size: 19px;
+    }
+
+    .content-card p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+
+    .content-card ul {
+      padding-left: 20px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* =========================
+       FAQ
+    ========================= */
+
+    .faq {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    details {
+      background: white;
+
+      border: 1px solid var(--border);
+      border-radius: 16px;
+
+      padding: 18px 20px;
+
+      margin-bottom: 12px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    details p {
+      color: var(--muted);
+      font-size: 14px;
+
+      margin-top: 10px;
+    }
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta {
+      margin-bottom: 70px;
+
+      text-align: center;
+
+      padding: 50px 25px;
+
+      border-radius: 28px;
+
+      color: white;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          var(--blue),
+          var(--secondary)
+        );
+    }
+
+    .cta h2 {
+      font-size: clamp(28px, 5vw, 42px);
+    }
+
+    .cta p {
+      max-width: 600px;
+      margin: 9px auto 20px;
+      opacity: 0.9;
+    }
+
+    .cta a {
+      display: inline-block;
+
+      background: white;
+      color: var(--primary);
+
+      padding: 12px 20px;
+
+      border-radius: 13px;
+
+      font-weight: 900;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: #111526;
+      color: #d9dcea;
+
+      padding: 40px 0;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo {
+      font-weight: 900;
+      font-size: 20px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #a69cff,
+          #ff8db8,
+          #ffc56d
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .footer-description {
+      max-width: 430px;
+
+      color: #9299ad;
+
+      font-size: 13px;
+
+      margin-top: 7px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: #c4c9d7;
+    }
+
+    .copyright {
+      border-top: 1px solid #292e42;
+
+      margin-top: 28px;
+      padding-top: 20px;
+
+      color: #777f95;
+      font-size: 12px;
+    }
+
+    /* =========================
+       DARK MODE
+    ========================= */
+
+    body.dark {
+      --bg: #0e1220;
+      --card: #171c2c;
+      --text: #f1f3f8;
+      --muted: #a5adbd;
+      --border: #293145;
+    }
+
+    body.dark header {
+      background: rgba(14, 18, 32, 0.92);
+      border-color: #293145;
+    }
+
+    body.dark .nav-links a {
+      color: #bbc2d0;
+    }
+
+    body.dark .theme-button {
+      background: #171c2c;
+      border-color: #293145;
+    }
+
+    body.dark .trust span,
+    body.dark .step,
+    body.dark .content-card,
+    body.dark details {
+      background: #171c2c;
+      border-color: #293145;
+    }
+
+    body.dark .mode-button {
+      background: #121725;
+      border-color: #293145;
+      color: #aeb6c8;
+    }
+
+    body.dark .mode-button.active {
+      color: white;
+    }
+
+    body.dark .input-wrap input {
+      background: #111624;
+      border-color: #30384d;
+      color: white;
+    }
+
+    body.dark .reset-button {
+      background: #293145;
+      color: #d5d9e4;
+    }
+
+    body.dark .result-explanation,
+    body.dark .content-card p,
+    body.dark .content-card ul,
+    body.dark .step p,
+    body.dark details p {
+      color: #aab2c2;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 760px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 50px;
+      }
+
+      .hero h1 {
+        letter-spacing: -1.5px;
+      }
+
+      .calculator-card {
+        padding: 15px;
+        border-radius: 22px;
+      }
+
+      .mode-buttons {
+        grid-template-columns: 1fr;
+      }
+
+      .fields {
+        grid-template-columns: 1fr;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .content-card {
+        padding: 22px;
+      }
+
+      .result-actions {
+        flex-direction: column;
+      }
+
+      .small-button {
+        width: 100%;
+      }
+
+      .footer-row {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container nav">
+
+      <a href="#top" class="logo">
+        PercentCalc Agha
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#calculator">Calculator</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <button
+        class="theme-button"
+        id="themeButton"
+        type="button"
+        aria-label="Toggle dark mode"
+        title="Toggle dark mode"
+      >
+        🌙
+      </button>
+
+    </div>
+  </header>
+
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+
+      <div class="container">
+
+        <div class="badge">
+          ✨ Free • Fast • Simple
+        </div>
+
+        <h1>
+          <span class="gradient">Percentage Calculator</span>
+          Online
+        </h1>
+
+        <p>
+          Calculate percentages quickly and accurately.
+          Find a percentage of a number, work out what percentage
+          one number is of another, or calculate percentage change.
+        </p>
+
+        <div class="trust">
+          <span>⚡ Instant Results</span>
+          <span>📱 Mobile Friendly</span>
+          <span>🔒 No Signup</span>
+          <span>💯 Free</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CALCULATOR -->
+    <section id="calculator">
+
+      <div class="container">
+
+        <div class="calculator-card">
+
+          <!-- MODES -->
+          <div class="mode-buttons">
+
+            <button
+              class="mode-button active"
+              data-mode="percent-of"
+              type="button"
+            >
+              What is X% of Y?
+            </button>
+
+            <button
+              class="mode-button"
+              data-mode="what-percent"
+              type="button"
+            >
+              X is what % of Y?
+            </button>
+
+            <button
+              class="mode-button"
+              data-mode="change"
+              type="button"
+            >
+              Percentage Change
+            </button>
+
+          </div>
+
+
+          <!-- QUESTION -->
+          <div class="question">
+
+            <h2 id="questionTitle">
+              What is 15% of 200?
+            </h2>
+
+            <p id="questionDescription">
+              Enter your numbers below to calculate the answer.
+            </p>
+
+          </div>
+
+
+          <!-- INPUTS -->
+          <div class="fields" id="fields">
+
+            <div class="field">
+
+              <label for="inputA" id="labelA">
+                Percentage
+              </label>
+
+              <div class="input-wrap">
+
+                <input
+                  id="inputA"
+                  type="number"
+                  inputmode="decimal"
+                  step="any"
+                  placeholder="15"
+                  autocomplete="off"
+                >
+
+                <span class="suffix" id="suffixA">%</span>
+
+              </div>
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="inputB" id="labelB">
+                Number
+              </label>
+
+              <div class="input-wrap">
+
+                <input
+                  id="inputB"
+                  type="number"
+                  inputmode="decimal"
+                  step="any"
+                  placeholder="200"
+                  autocomplete="off"
+                >
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- CALCULATE -->
+          <button
+            class="calculate-button"
+            id="calculateButton"
+            type="button"
+          >
+            Calculate Percentage
+          </button>
+
+
+          <!-- ERROR -->
+          <div class="error" id="error"></div>
+
+
+          <!-- RESULT -->
+          <div class="result" id="result">
+
+            <div class="result-label">
+              Your answer
+            </div>
+
+            <div class="result-number" id="resultNumber">
+              30
+            </div>
+
+            <p class="result-explanation" id="resultExplanation">
+              15% of 200 is 30.
+            </p>
+
+            <div class="result-actions">
+
+              <button
+                class="small-button copy-button"
+                id="copyButton"
+                type="button"
+              >
+                📋 Copy Result
+              </button>
+
+              <button
+                class="small-button reset-button"
+                id="resetButton"
+                type="button"
+              >
+                Reset
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+    <section class="section" id="how-it-works">
+
+      <div class="container">
+
+        <div class="section-title">
+
+          <h2>
+            Calculate Percentages in Seconds
+          </h2>
+
+          <p>
+            No complicated formulas. Enter your numbers and get your result instantly.
+          </p>
+
+        </div>
+
+
+        <div class="steps">
+
+          <article class="step">
+
+            <div class="step-number">
+              1
+            </div>
+
+            <h3>
+              Choose a calculation
+            </h3>
+
+            <p>
+              Select the percentage calculation you need.
+            </p>
+
+          </article>
+
+
+          <article class="step">
+
+            <div class="step-number">
+              2
+            </div>
+
+            <h3>
+              Enter your numbers
+            </h3>
+
+            <p>
+              Type the numbers into the simple calculator fields.
+            </p>
+
+          </article>
+
+
+          <article class="step">
+
+            <div class="step-number">
+              3
+            </div>
+
+            <h3>
+              Get your answer
+            </h3>
+
+            <p>
+              Press calculate and receive your percentage result instantly.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SEO CONTENT -->
+    <section class="section">
+
+      <div class="container">
+
+        <article class="content-card">
+
+          <h2>
+            Free Percentage Calculator
+          </h2>
+
+          <p>
+            PercentCalc Agha is a free online percentage calculator
+            designed to make everyday percentage calculations quick
+            and easy. You can use it for school, shopping, discounts,
+            business calculations, finance, statistics and many other
+            everyday situations.
+          </p>
+
+          <h3>
+            What is a percentage?
+          </h3>
+
+          <p>
+            A percentage is a number expressed as a part of 100.
+            The percent symbol is %. For example, 25% means 25 out
+            of 100, or one quarter.
+          </p>
+
+          <h3>
+            What can this percentage calculator calculate?
+          </h3>
+
+          <ul>
+            <li>What is a percentage of a number?</li>
+            <li>What percentage is one number of another?</li>
+            <li>Percentage increase and decrease.</li>
+            <li>Percentage change between two numbers.</li>
+            <li>Quick everyday percentage calculations.</li>
+          </ul>
+
+          <h3>
+            Is this percentage calculator free?
+          </h3>
+
+          <p>
+            Yes. PercentCalc Agha is designed as a free online calculator.
+            No account or paid subscription is required to perform calculations.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+
+      <div class="container">
+
+        <div class="section-title">
+
+          <h2>
+            Frequently Asked Questions
+          </h2>
+
+          <p>
+            Common questions about percentage calculations.
+          </p>
+
+        </div>
+
+
+        <div class="faq">
+
+          <details>
+
+            <summary>
+              How do I calculate a percentage of a number?
+            </summary>
+
+            <p>
+              Select "What is X% of Y?", enter the percentage and
+              the number, then press Calculate Percentage.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              How do I find what percentage one number is of another?
+            </summary>
+
+            <p>
+              Select "X is what % of Y?", enter the two numbers,
+              and the calculator will show the percentage.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              How do I calculate percentage change?
+            </summary>
+
+            <p>
+              Select "Percentage Change", enter the original value
+              and the new value, and the calculator will show the
+              percentage increase or decrease.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Is PercentCalc Agha free?
+            </summary>
+
+            <p>
+              Yes. The calculator is free to use and does not require
+              registration.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Does it work on phones?
+            </summary>
+
+            <p>
+              Yes. The website uses responsive design so it works
+              on phones, tablets and desktop computers.
+            </p>
+
+          </details>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section>
+
+      <div class="container">
+
+        <div class="cta">
+
+          <h2>
+            Need a Percentage?
+          </h2>
+
+          <p>
+            Enter your numbers and get the answer in seconds.
+          </p>
+
+          <a href="#calculator">
+            Open Calculator
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-row">
+
+        <div>
+
+          <div class="footer-logo">
+            PercentCalc Agha
+          </div>
+
+          <p class="footer-description">
+            A simple, fast and free online percentage calculator
+            for everyday calculations.
+          </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+          <a href="#calculator">
+            Calculator
+          </a>
+
+          <a href="#how-it-works">
+            How It Works
+          </a>
+
+          <a href="#faq">
+            FAQ
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="copyright">
+
+        © <span id="year"></span>
+        PercentCalc Agha. All rights reserved.
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <script>
+
+    /* =========================
+       ELEMENTS
+    ========================= */
+
+    const modeButtons =
+      document.querySelectorAll(".mode-button");
+
+    const questionTitle =
+      document.getElementById("questionTitle");
+
+    const questionDescription =
+      document.getElementById("questionDescription");
+
+    const labelA =
+      document.getElementById("labelA");
+
+    const labelB =
+      document.getElementById("labelB");
+
+    const suffixA =
+      document.getElementById("suffixA");
+
+    const inputA =
+      document.getElementById("inputA");
+
+    const inputB =
+      document.getElementById("inputB");
+
+    const calculateButton =
+      document.getElementById("calculateButton");
+
+    const result =
+      document.getElementById("result");
+
+    const resultNumber =
+      document.getElementById("resultNumber");
+
+    const resultExplanation =
+      document.getElementById("resultExplanation");
+
+    const error =
+      document.getElementById("error");
+
+    const copyButton =
+      document.getElementById("copyButton");
+
+    const resetButton =
+      document.getElementById("resetButton");
+
+    const themeButton =
+      document.getElementById("themeButton");
+
+    let currentMode = "percent-of";
+
+
+    /* =========================
+       YEAR
+    ========================= */
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+
+    /* =========================
+       MODE SWITCHING
+    ========================= */
+
+    modeButtons.forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        modeButtons.forEach(btn => {
+          btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        currentMode =
+          button.dataset.mode;
+
+        updateCalculator();
+
+        clearResult();
+
+      });
+
+    });
+
+
+    function updateCalculator() {
+
+      if (currentMode === "percent-of") {
+
+        questionTitle.textContent =
+          "What is X% of Y?";
+
+        questionDescription.textContent =
+          "Enter a percentage and a number to find the answer.";
+
+        labelA.textContent =
+          "Percentage";
+
+        labelB.textContent =
+          "Number";
+
+        suffixA.textContent =
+          "%";
+
+        inputA.placeholder =
+          "15";
+
+        inputB.placeholder =
+          "200";
+
+      }
+
+
+      if (currentMode === "what-percent") {
+
+        questionTitle.textContent =
+          "X is what % of Y?";
+
+        questionDescription.textContent =
+          "Find what percentage one number is of another.";
+
+        labelA.textContent =
+          "First Number";
+
+        labelB.textContent =
+          "Second Number";
+
+        suffixA.textContent =
+          "";
+
+        inputA.placeholder =
+          "30";
+
+        inputB.placeholder =
+          "200";
+
+      }
+
+
+      if (currentMode === "change") {
+
+        questionTitle.textContent =
+          "What is the percentage change?";
+
+        questionDescription.textContent =
+          "Enter the original value and the new value.";
+
+        labelA.textContent =
+          "Original Value";
+
+        labelB.textContent =
+          "New Value";
+
+        suffixA.textContent =
+          "";
+
+        inputA.placeholder =
+          "200";
+
+        inputB.placeholder =
+          "250";
+
+      }
+
+    }
+
+
+    /* =========================
+       CALCULATE
+    ========================= */
+
+    calculateButton.addEventListener(
+      "click",
+      calculate
+    );
+
+
+    [inputA, inputB].forEach(input => {
+
+      input.addEventListener(
+        "keydown",
+        event => {
+
+          if (event.key === "Enter") {
+            calculate();
+          }
+
+        }
+      );
+
+    });
+
+
+    function calculate() {
+
+      clearError();
+
+      const a =
+        Number(
+          String(inputA.value).replace(/,/g, "")
+        );
+
+      const b =
+        Number(
+          String(inputB.value).replace(/,/g, "")
+        );
+
+
+      if (
+        inputA.value.trim() === "" ||
+        inputB.value.trim() === ""
+      ) {
+
+        showError(
+          "Please enter both numbers."
+        );
+
+        return;
+      }
+
+
+      if (
+        !Number.isFinite(a) ||
+        !Number.isFinite(b)
+      ) {
+
+        showError(
+          "Please enter valid numbers."
+        );
+
+        return;
+      }
+
+
+      let value;
+      let explanation;
+
+
+      /* What is X% of Y? */
+
+      if (currentMode === "percent-of") {
+
+        value =
+          (a / 100) * b;
+
+        explanation =
+          `${formatNumber(a)}% of ${formatNumber(b)} is ${formatNumber(value)}.`;
+
+      }
+
+
+      /* X is what % of Y? */
+
+      if (currentMode === "what-percent") {
+
+        if (b === 0) {
+
+          showError(
+            "The second number cannot be zero."
+          );
+
+          return;
+        }
+
+        value =
+          (a / b) * 100;
+
+        explanation =
+          `${formatNumber(a)} is ${formatNumber(value)}% of ${formatNumber(b)}.`;
+
+      }
+
+
+      /* Percentage Change */
+
+      if (currentMode === "change") {
+
+        if (a === 0) {
+
+          showError(
+            "The original value cannot be zero when calculating percentage change."
+          );
+
+          return;
+        }
+
+        value =
+          ((b - a) / Math.abs(a)) * 100;
+
+        const direction =
+          value > 0
+            ? "increase"
+            : value < 0
+              ? "decrease"
+              : "no change";
+
+        explanation =
+          `From ${formatNumber(a)} to ${formatNumber(b)} is a ${formatNumber(Math.abs(value))}% ${direction}.`;
+
+      }
+
+
+      resultNumber.textContent =
+        currentMode === "percent-of"
+          ? formatNumber(value)
+          : `${formatNumber(value)}%`;
+
+      resultExplanation.textContent =
+        explanation;
+
+      result.classList.add("show");
+
+      result.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+      });
+
+    }
+
+
+    /* =========================
+       NUMBER FORMAT
+    ========================= */
+
+    function formatNumber(number) {
+
+      if (!Number.isFinite(number)) {
+        return "0";
+      }
+
+      const rounded =
+        Math.round(
+          (number + Number.EPSILON) * 100000000
+        ) / 100000000;
+
+      return new Intl.NumberFormat(
+        "en-US",
+        {
+          maximumFractionDigits: 8
+        }
+      ).format(rounded);
+
+    }
+
+
+    /* =========================
+       ERROR
+    ========================= */
+
+    function showError(message) {
+
+      error.textContent =
+        message;
+
+      error.classList.add("show");
+
+      result.classList.remove("show");
+
+    }
+
+
+    function clearError() {
+
+      error.textContent = "";
+
+      error.classList.remove("show");
+
+    }
+
+
+    function clearResult() {
+
+      clearError();
+
+      result.classList.remove("show");
+
+    }
+
+
+    /* =========================
+       RESET
+    ========================= */
+
+    resetButton.addEventListener(
+      "click",
+      () => {
+
+        inputA.value = "";
+        inputB.value = "";
+
+        clearResult();
+
+        inputA.focus();
+
+      }
+    );
+
+
+    /* =========================
+       COPY
+    ========================= */
+
+    copyButton.addEventListener(
+      "click",
+      async () => {
+
+        const text =
+          `${resultNumber.textContent} — ${resultExplanation.textContent}`;
+
+        try {
+
+          await navigator.clipboard.writeText(text);
+
+          copyButton.textContent =
+            "✓ Copied!";
+
+          setTimeout(() => {
+
+            copyButton.textContent =
+              "📋 Copy Result";
+
+          }, 1600);
+
+        } catch {
+
+          showError(
+            "Copy was not available. Please copy the result manually."
+          );
+
+        }
+
+      }
+    );
+
+
+    /* =========================
+       DARK MODE
+    ========================= */
+
+    const savedTheme =
+      localStorage.getItem(
+        "percentcalc-theme"
+      );
+
+    if (savedTheme === "dark") {
+
+      document.body.classList.add("dark");
+
+      themeButton.textContent =
+        "☀️";
+
+    }
+
+
+    themeButton.addEventListener(
+      "click",
+      () => {
+
+        const dark =
+          document.body.classList.toggle("dark");
+
+        themeButton.textContent =
+          dark
+            ? "☀️"
+            : "🌙";
+
+        localStorage.setItem(
+          "percentcalc-theme",
+          dark
+            ? "dark"
+            : "light"
+        );
+
+      }
+    );
+
+
+    /* =========================
+       INITIAL STATE
+    ========================= */
+
+    updateCalculator();
+
+  </script>
+
+</body>
+</html>
